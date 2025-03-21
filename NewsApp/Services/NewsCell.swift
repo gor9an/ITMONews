@@ -25,10 +25,10 @@ final class NewsCell: UITableViewCell {
 
         titleLabel.tintColor = .label
         descriptionLabel.tintColor = .label
-        
+
+        contentView.addSubview(backgroundImage)
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
-        contentView.addSubview(backgroundImage)
 
         setUpConstraints()
     }
@@ -42,7 +42,7 @@ final class NewsCell: UITableViewCell {
             descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-            backgroundImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            backgroundImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             backgroundImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             backgroundImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             backgroundImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
