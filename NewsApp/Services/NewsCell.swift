@@ -25,6 +25,7 @@ final class NewsCell: UITableViewCell {
 
         titleLabel.tintColor = .label
         descriptionLabel.tintColor = .label
+        backgroundImage.alpha = 0.5
 
         contentView.addSubview(backgroundImage)
         contentView.addSubview(titleLabel)
