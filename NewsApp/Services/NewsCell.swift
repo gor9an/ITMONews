@@ -24,7 +24,10 @@ final class NewsCell: UITableViewCell {
         descriptionLabel.setContentHuggingPriority(.defaultHigh, for: .vertical)
 
         titleLabel.tintColor = .label
+        titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 0
         descriptionLabel.tintColor = .label
+        descriptionLabel.numberOfLines = 0
         backgroundImage.alpha = 0.5
 
         contentView.addSubview(backgroundImage)
