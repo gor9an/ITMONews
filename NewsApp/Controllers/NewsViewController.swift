@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import ProgressHUD
 
 final class NewsViewController: UIViewController {
     lazy var tableView = UITableView()
@@ -48,7 +49,8 @@ final class NewsViewController: UIViewController {
         let configuration = URLSessionConfiguration.default
         configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
         let params : [String : String] = ["country": "us"]
-        
+        ProgressHUD.animate()
+
         AF.request(url, method: .get, parameters: params, headers: headers)
             .responseDecodable(of: Articles.self) { [weak self] response in
                 guard let self else { return }
@@ -58,8 +60,12 @@ final class NewsViewController: UIViewController {
                     
                     self.news = items.articles.compactMap {$0}
                     tableView.reloadData()
+                    DispatchQueue.main.async {
+                        ProgressHUD.succeed()
+                    }
 
                 case .failure(let error):
+                    ProgressHUD.failed()
                     print(error)
                 }
             }
