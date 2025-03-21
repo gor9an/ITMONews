@@ -50,7 +50,7 @@ final class NewsCell: UITableViewCell {
             backgroundImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             backgroundImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             backgroundImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-            contentView.heightAnchor.constraint(equalToConstant: 100)
+            contentView.heightAnchor.constraint(equalToConstant: backgroundImage.image != nil ? backgroundImage.image!.size.height : 200)
         ])
     }
 }
