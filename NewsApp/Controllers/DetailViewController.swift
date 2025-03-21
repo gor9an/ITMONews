@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailViewController.swift
 //  NewsApp
 //
 //  Created by Andrey Gordienko on 21.03.2025.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,4 +16,3 @@ class ViewController: UIViewController {
 
 
 }
-
